@@ -1,0 +1,52 @@
+{
+    "name" : "$(PROJECT_NAME)",
+    "version" : "$(PROJECT_VERSION)",
+    "description" : "A library for doing speech recognition using a Coqui STT model",
+    "main" : "./index.js",
+    "types": "./index.d.ts",
+    "bin": {
+       "stt": "./client.js"
+    },
+    "author" : "Coqui GmbH",
+    "license": "MPL-2.0",
+    "homepage": "https://github.com/coqui-ai/STT",
+    "files": [
+       "README.md",
+       "client.js",
+       "index.js",
+       "index.d.ts",
+       "lib/*"
+    ],
+    "bugs": {
+       "url": "https://github.com/coqui-ai/STT/issues"
+    },
+    "repository"   :  {
+       "type" : "git",
+       "url"  : "git://github.com/coqui-ai/STT.git"
+    },
+    "binary": {
+        "module_name" : "stt",
+        "module_path" : "./lib/binding/v{version}/{platform}-{arch}/{node_abi}/",
+        "remote_path" : "./v{version}/{configuration}/",
+        "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
+        "host"        : "https://host.invalid"
+    },
+    "dependencies"  : {
+      "node-pre-gyp": "0.15.x",
+      "argparse": "1.0.x",
+      "sox-stream": "2.0.x",
+      "memory-stream": "1.0.x",
+      "node-wav": "0.0.2"
+    },
+    "devDependencies": {
+      "electron": "^1.7.9",
+      "node-gyp": "5.x",
+      "typescript": "3.8.x",
+      "typedoc": "0.17.x",
+      "@types/argparse": "1.0.x",
+      "@types/node": "13.9.x"
+    },
+    "scripts": {
+        "test": "node index.js"
+    }
+}
